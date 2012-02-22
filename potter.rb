@@ -6,14 +6,14 @@ class Potter
 
   def checkout
     seen = {}
-    total = @books.inject(0) do |sum, b|
+    total = @books.inject(0) do |cents, b|
       seen[b] = true
-      sum + 8.0
+      cents + 800
     end
 
     discount = 0.05 * (seen.length - 1)
 
-    return total * (1.0 - discount)
+    return total * (1.0 - discount) / 100
   end
 
 end
